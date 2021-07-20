@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { fetchData } from '../../api';
-import { CardRow } from '../../components';
+import { CardGrid } from '../../components';
 
 export const Home: FC<{}> = () => {
   const [data, setData] = useState([]);
@@ -12,5 +12,5 @@ export const Home: FC<{}> = () => {
       .catch(e => setError(true));
   }, []);
 
-  return <CardRow data={data} error={error} />;
+  return <CardGrid data={data} error={error} />;
 };

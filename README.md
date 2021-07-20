@@ -1,6 +1,28 @@
-# Getting Started with Create React App
+# Lodgify front-end test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Folder Structure
+
+I tried to avoid mixing different types of code/components together with the usage of folder structure (commonly used on the current assignement) that would be self-descriptive and fullfil this very purpose.
+
+### api
+
+Self descriptive - contains the necessary code to handle retrieval of the data. No need for anything special (like whole data layer) since the 'api' consists of one call only.
+For the data persistence in the app I could use redux store, though it seemed a bit like an overkill for one request.
+
+### assets
+
+Consists only from 2 items - both icons needed for the design provided.
+
+### components
+
+The place for the components. Components are as small as possible and should be 'standalone' (meaning not dependent on something from outside - another component)
+
+### Scenes
+
+Alpha and omega - contains the larger 'components' that are supposed to function like 'pages'. It contains the logic needed for displaying necessary components in specified manner.
+
 
 ## Available Scripts
 
@@ -32,15 +54,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

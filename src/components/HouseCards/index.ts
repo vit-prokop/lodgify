@@ -1,2 +1,2 @@
-export * from './CardRow';
+export * from './CardGrid';
 export * from './Card';
