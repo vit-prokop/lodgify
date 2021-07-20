@@ -6,20 +6,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 I tried to avoid mixing different types of code/components together with the usage of folder structure (commonly used on the current assignement) that would be self-descriptive and fullfil this very purpose.
 
-### api
+### /api
 
 Self descriptive - contains the necessary code to handle retrieval of the data. No need for anything special (like whole data layer) since the 'api' consists of one call only.
 For the data persistence in the app I could use redux store, though it seemed a bit like an overkill for one request.
 
-### assets
+### /assets
 
 Consists only from 2 items - both icons needed for the design provided.
 
-### components
+### /components
 
 The place for the components. Components are as small as possible and should be 'standalone' (meaning not dependent on something from outside - another component)
 
-### Scenes
+### /scenes
 
 Alpha and omega - contains the larger 'components' that are supposed to function like 'pages'. It contains the logic needed for displaying necessary components in specified manner.
 

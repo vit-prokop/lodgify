@@ -8,10 +8,13 @@ type Props = {
   error: boolean;
 }
 
-export const CardGrid: FC<Props> = (props: Props) => {
+export const CardGrid: FC<Props> = ({ data, error }: Props) => {
+  if (error) {
+    return <div className="error">There was an error trying to fetch the data.</div>;
+  }
   return (
     <div className="card-grid" data-testid="card-grid">
-      {props.data.map((card: CardType, index: number) => <Card {...card} key={`card-${index}`} />)}
+      {data.map((card: CardType, index: number) => <Card {...card} key={`card-${index}`} />)}
     </div>
   );
 };

@@ -4,13 +4,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   width: 218px;
   height: 278px;
-  border-radius: 5px;
-
-  background-color: #fff;
   margin: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
 
   &:hover {
     .focused {
@@ -25,7 +26,7 @@
     left: 0;
     width: calc(100% - 2px);
     height: calc(100% - 2px);
-    border: 1px solid #333;
+    border: 1px solid $border-color;
     border-radius: 5px;
   }
 
@@ -64,9 +65,8 @@
     .placeholder {
       width: 72px;
       height: 60px;
-      margin-left: 50%;
+      margin-left: calc(50% - 36px);
       margin-top: 44px;
-      transform: translateX(-50%);
       background-size: contain;
     }
     
@@ -100,7 +100,7 @@
       font-weight: 900;
       font-size: 16px;
       line-height: 20px;
-      color: #333333;
+      color: $border-color;
       top: 34px;
     }
 

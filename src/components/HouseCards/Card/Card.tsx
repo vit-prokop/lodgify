@@ -1,15 +1,15 @@
 import { createRef, FC, useEffect, useState } from 'react';
-import { getStatusInfo, isInViewport } from './helpers';
+import { getStatusInfo, isInViewport } from './utils';
 import { CardImage } from './CardImage';
 import { BookButton } from './BookButton';
 import { Card as Props } from '../types';
 import './Card.scss';
 
-export const Card: FC<Props> = (props: Props) => {
+export const Card: FC<Props> = ({ id, name, image, bookable, booked }: Props) => {
   const [isVisible, setVisibility] = useState(true);
 
   const reference = createRef<HTMLDivElement>();
-  const status = getStatusInfo(props.bookable, props.booked);
+  const status = getStatusInfo(bookable, booked);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -24,11 +24,11 @@ export const Card: FC<Props> = (props: Props) => {
       {isVisible && (
         <>
           <div className="focused" />
-          <CardImage image={props.image} status={status} />
+          <CardImage image={image} status={status} />
           <div className="info-wrapper">
-            <div className="id">Id: {props.id}</div>
-            <div className="name">{props.name}</div>
-            <BookButton status={status} booked={props.booked} />
+            <div className="id">Id: {id}</div>
+            <div className="name">{name}</div>
+            <BookButton status={status} booked={booked} />
           </div>
         </>
       )}

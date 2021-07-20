@@ -20,5 +20,10 @@ describe('Card Grid', () => {
     expect(screen.getByTestId('card-grid')).toBeInTheDocument();
     expect(screen.getAllByTestId('card').length).toBe(Cards.data.length);
   });
+
+  it('should handle error', () => {
+    grid = render(<CardGrid data={[]} error />);
+    expect(screen.getByText('There was an error trying to fetch the data.')).toBeInTheDocument();
+  });
 });
 

@@ -1,23 +1,23 @@
 {
   "bookable": {
-		"id": "6489887061",
-		"name": "Roxbury",
-		"image": "https://picsum.photos/1614/807",
-		"bookable": true,
-		"booked": 0
-	},
-	"booked": {
-		"id": "6489887061",
-		"name": "Roxbury",
-		"image": "https://picsum.photos/1614/807",
-		"bookable": true,
-		"booked": 8
-	},
-	"unavailable": {
-		"id": "6489887061",
-		"name": "Roxbury",
-		"image": "https://picsum.photos/1614/807",
-		"bookable": false,
-		"booked": 8
-	}
+    "id": "6489887061",
+    "name": "Roxbury",
+    "image": "https://picsum.photos/1614/807",
+    "bookable": true,
+    "booked": 0
+  },
+  "booked": {
+    "id": "6489887061",
+    "name": "Roxbury",
+    "image": "https://picsum.photos/1614/807",
+    "bookable": true,
+    "booked": 8
+  },
+  "unavailable": {
+    "id": "6489887061",
+    "name": "Roxbury",
+    "image": "https://picsum.photos/1614/807",
+    "bookable": false,
+    "booked": 8
+  }
 }
