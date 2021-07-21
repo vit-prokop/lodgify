@@ -24,7 +24,8 @@ export const Card: FC<Props> = ({ id, name, image, bookable, booked }: Props) =>
       {isVisible && (
         <>
           <div className="focused" />
-          <CardImage image={image} status={status} />
+          <CardImage image={image} />
+          <div className={`status ${status}`}>{status}</div>
           <div className="info-wrapper">
             <div className="id">Id: {id}</div>
             <div className="name">{name}</div>

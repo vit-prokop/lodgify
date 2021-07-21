@@ -8,7 +8,7 @@
   height: 278px;
   margin: 10px;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: $white;
   overflow: hidden;
 
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
@@ -30,37 +30,36 @@
     border-radius: 5px;
   }
 
+  .status {
+    left: 11px;
+    top: 8px;
+    position: absolute;
+    padding: 3px 10px;
+    height: 21px;
+    color: #F7F7F7;
+    border-radius: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 21px;
+
+    &.available {
+      background-color: $green;
+    }
+
+    &.unavailable {
+      background-color: $red;
+    }
+
+    &.booked {
+      background-color: $blue;
+    }
+  }
+
   .image-wrapper {
     height: 140px;
     width: 100%;
     background-color: #E7E7E7;
-
-    
-    .status {
-      left: 11px;
-      top: 8px;
-      position: absolute;
-      padding: 3px 10px;
-      height: 21px;
-      color: #F7F7F7;
-      border-radius: 30px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 21px;
-
-      &.available {
-        background-color: $green;
-      }
-
-      &.unavailable {
-        background-color: $red;
-      }
-
-      &.booked {
-        background-color: $blue;
-      }
-    }
 
     .placeholder {
       width: 72px;
@@ -113,7 +112,7 @@
       border-radius: 5px;
       line-height: 40px;
       text-align: center;
-      color: #fff;
+      color: $white;
       cursor: pointer;
       font-weight: bold;
 

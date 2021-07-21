@@ -3,12 +3,12 @@ import placeholderIcon from '../../../assets/placeholder-icon.svg';
 
 type Props = {
   image: string;
-  status: string;
 };
 
-export const CardImage: FC<Props> = ({ image, status }: Props) => {
+export const CardImage: FC<Props> = ({ image }: Props) => {
   const [isPlaceholder, setPlaceholder] = useState(true);
 
+  // To ensure the image will be 'shown' only when it is loaded
   useEffect(() => {
     const img = new Image();
     img.onload = () => { setPlaceholder(false); };
@@ -31,7 +31,6 @@ export const CardImage: FC<Props> = ({ image, status }: Props) => {
           data-testid="image-loaded"
         />
       )}
-      <div className={`status ${status}`}>{status}</div>
     </div>
   );
 };
