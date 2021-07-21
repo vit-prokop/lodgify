@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Card as CardType } from '../types';
 import { Card } from '..';
-import './CardGrid.css';
+import './CardGrid.scss';
 
 type Props = {
   data: CardType[];

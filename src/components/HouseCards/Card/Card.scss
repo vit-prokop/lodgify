@@ -2,11 +2,11 @@
 
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 218px;
   height: 278px;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
   background-color: $white;
   overflow: hidden;
@@ -31,17 +31,17 @@
   }
 
   .status {
+    position: absolute;
     left: 11px;
     top: 8px;
-    position: absolute;
-    padding: 3px 10px;
     height: 21px;
-    color: #F7F7F7;
+    padding: 3px 10px;
     border-radius: 30px;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
     line-height: 21px;
+    color: #F7F7F7;
 
     &.available {
       background-color: $green;
@@ -95,26 +95,26 @@
 
     .name {
       position: absolute;
+      top: 34px;
       font-style: italic;
       font-weight: 900;
       font-size: 16px;
       line-height: 20px;
       color: $border-color;
-      top: 34px;
     }
 
     .button {
       position: absolute;
       bottom: 16px;
-      background-color: $blue;
       width: 186px;
       height: 40px;
+      background-color: $blue;
       border-radius: 5px;
-      line-height: 40px;
       text-align: center;
+      font-weight: bold;
+      line-height: 40px;
       color: $white;
       cursor: pointer;
-      font-weight: bold;
 
       &.unavailable {
         background-color: #B3B3B3;
@@ -124,14 +124,14 @@
 
     .booked {
       position: absolute;
-      display: flex;
+      bottom: 28px;
       margin: 0 auto;
+      display: flex;
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
       line-height: 18px;
       color: $green;
-      bottom: 28px;
 
       .icon {
         padding-right: 8px;

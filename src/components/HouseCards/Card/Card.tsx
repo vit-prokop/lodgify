@@ -11,6 +11,7 @@ export const Card: FC<Props> = ({ id, name, image, bookable, booked }: Props) =>
   const reference = createRef<HTMLDivElement>();
   const status = getStatusInfo(bookable, booked);
 
+  // Kind of lazy-loading of the items to limit DOM elements and loaded images
   useEffect(() => {
     document.addEventListener('scroll', () => {
       if (reference.current && reference.current !== null) {
