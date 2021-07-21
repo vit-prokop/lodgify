@@ -9,7 +9,7 @@ I tried to avoid mixing different types of code/components together with the usa
 ### /api
 
 Self descriptive - contains the necessary code to handle retrieval of the data. No need for anything special (like whole data layer) since the 'api' consists of one call only.
-For the data persistence in the app I could use redux store, though it seemed a bit like an overkill for one request.
+For the data persistence in the app I could use redux store, though it seemed a bit like an overkill for one request and a few rows of data.
 
 ### /assets
 
@@ -18,11 +18,12 @@ Consists only from 2 items - both icons needed for the design provided.
 ### /components
 
 The place for the components. Components are as small as possible and should be 'standalone' (meaning not dependent on something from outside - another component)
+Ideal state is that each component should do ONE thing only. For example: __CardImage.tsx__ should only handle the image of the card and their states/transitions, nothing else.
 
 ### /scenes
 
-Alpha and omega - contains the larger 'components' that are supposed to function like 'pages'. It contains the logic needed for displaying necessary components in specified manner.
-
+Contains larger components (containers) that should render and control smaller components, fetch data for the page, and pass mentioned data to the components.
+Ideal state would be that the page retrieves data needed, AND handles the subsequent requests to retrieval of additional data (or sends request with filled form data to the server via `"api layer"`)
 
 ## Available Scripts
 
