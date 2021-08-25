@@ -25,6 +25,50 @@ Ideal state is that each component should do ONE thing only. For example: __Card
 Contains larger components (containers) that should render and control smaller components, fetch data for the page, and pass mentioned data to the components.
 Ideal state would be that the page retrieves data needed, AND handles the subsequent requests to retrieval of additional data (or sends request with filled form data to the server via `"api layer"`)
 
+## Usage
+
+The component(s) are pretty simple to use.
+There are 2 main components that are relevant. 
+
+### Card
+
+This can be arguably the main (most important) component. It is responsible for rendering the Card as described in design. 
+It expects to be given props:
+```ts
+type Props = {
+  id: string;
+  name: string;
+  image: string;
+  bookable: boolean;
+  booked: number;
+};
+```
+When given these props, `<Card>` component will render it according to the designs.
+It is that simple - simple visualisation component.
+
+#### _Subcomponents_
+
+To avoid `Card` component from being confusing, I decided to extract the _more complex_ parts of the JSX to their respective components.
+Thus we have `BookButton` responsible for rendering either Button or info about number of Booked days, and `CardImage` that handles the image and the transition between placeholder and the image.
+
+### CardGrid
+
+Simple component responsible for using the data provided via PROPS to render all the Cards.
+It expects to be given props:
+```ts
+type Props = {
+  data: CardType[];
+  error: boolean;
+};
+```
+If there was an error while fetching the data, it is passed into the CardGrid where the error message is shown.
+If the data were correctly retrieved, we will try to render Card for each entry. Each Card will, besides the props needed, get a `key` value that should distinguish each Card in the VirtualDOM.
+
+### HOME SCENE
+
+Home scene is responsible for one thing only - for retriving the data and passing it to the Grid. This is achieved with `useEffect` where the API (`fetchData`) is called and stored into the functional state (`useState`).
+This stored data, are then passed into the CardGrid component.
+
 ## Available Scripts
 
 In the project directory, you can run:
