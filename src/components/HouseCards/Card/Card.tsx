@@ -7,9 +7,9 @@ import './Card.scss';
 
 export const Card: FC<Props> = ({ id, name, image, bookable, booked }: Props) => {
   const [isVisible, setVisibility] = useState(true);
+  const [bookStatus, setBooked] = useState(getStatusInfo(bookable, booked)); 
 
   const reference = createRef<HTMLDivElement>();
-  const status = getStatusInfo(bookable, booked);
 
   // Kind of lazy-loading of the items to limit DOM elements and loaded images
   useEffect(() => {
@@ -24,13 +24,13 @@ export const Card: FC<Props> = ({ id, name, image, bookable, booked }: Props) =>
     <div className="card" data-testid="card" ref={reference}>
       {isVisible && (
         <>
-          <div className="focused" />
+          {(bookable && booked === 0) && <div className="focused" />}
           <CardImage image={image} />
-          <div className={`status ${status}`}>{status}</div>
+          <div className={`status ${bookStatus}`}>{bookStatus}</div>
           <div className="info-wrapper">
             <div className="id">Id: {id}</div>
             <div className="name">{name}</div>
-            <BookButton status={status} booked={booked} />
+            <BookButton status={bookStatus} booked={booked} onBooked={setBooked} />
           </div>
         </>
       )}
